@@ -19,14 +19,30 @@ That should compile the project, error encountered might be regarding mvn-compil
 After that you can run the jar with the command
 
 ```bash
-java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+java -cp target/hello-world-1.0-SNAPSHOT.jar com.ar21anmolarora.app.App
 ```
 
 Was unable to figure out how to make the 
 
 ```bash
-jav -jar target/hello-world-SNAPSHOT.jar 
+java -jar target/hello-world-1.0-SNAPSHOT.jar
 ```
 
 command work (?) Something about App.java file I guess!
 
+! Works now had to add 
+
+```xml
+
+<configuration> 
+          <archive> 
+            <manifest>  
+              <addClasspath>true</addClasspath> 
+              <mainClass>com.ar21anmolarora.app.App</mainClass> 
+            </manifest> 
+          </archive>  
+        </configuration>
+
+```
+
+As a plugin to pom.xml and recompile
